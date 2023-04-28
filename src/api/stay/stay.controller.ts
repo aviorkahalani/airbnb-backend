@@ -10,3 +10,13 @@ export const getStays = async (req: Request, res: Response) => {
     res.status(500).send({ err: 'Failed to get stays' })
   }
 }
+
+export const getStay = async (req: Request, res: Response) => {
+  try {
+    const { stayId } = req.params
+    const stay = await stayService.getStayById(stayId)
+    res.json(stay)
+  } catch (error) {
+    res.status(500).send({ err: 'Failed to get stay' })
+  }
+}
