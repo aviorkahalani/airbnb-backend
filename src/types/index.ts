@@ -1,5 +1,7 @@
-export interface Stay {
-  _id: string
+import { WithId, Document, ObjectId } from 'mongodb'
+
+export interface Stay extends WithId<Document> {
+  _id: ObjectId
   name: string
   summary: string
   interaction: string
@@ -59,4 +61,14 @@ export interface Stay {
     }
     txt: string
   }[]
+}
+
+export interface FilterBy {
+  city?: string
+  amenities?: string[]
+  price?: {
+    minPrice: number
+    maxPrice: number
+  }
+  propertyType?: string
 }
