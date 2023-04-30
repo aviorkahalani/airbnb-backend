@@ -24,7 +24,7 @@ app.use(cors(corsOptions))
 app.use('/api/stay', stayRoutes)
 
 app.get('/', (req: Request, res: Response) => {
-  res.json('Hello world')
+  res.json('Welcome to airbnb backend')
 })
 
 app.listen(PORT, () => {
