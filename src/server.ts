@@ -2,6 +2,7 @@ import express, { Express, Request, Response, json } from 'express'
 import { createServer } from 'http'
 import cors from 'cors'
 import stayRoutes from './api/stay/stay.routes.js'
+import { logger } from './services/loggerService.js'
 
 const app: Express = express()
 const PORT = 3030
@@ -28,5 +29,5 @@ app.get('/', (req: Request, res: Response) => {
 })
 
 app.listen(PORT, () => {
-  console.log(`[🔥SERVER]: App listening on http://localhost:${PORT}`)
+  logger.info(`app listening on http://localhost:${PORT}`)
 })
